@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Patient Registration</h1>
+
+  <table>
+    <tr>
+      <th>Patient ID</th>
+      <th>Surname</th>
+      <th>Other Names</th>
+      <th>Gender</th>
+      <th>Phone Number</th>
+      <th>Residential Address</th>
+      <th>Emergency Name</th>
+      <th>Emergency Contact</th>
+      <th>Relationship</th>
+    </tr>
+    <% patients.forEach(patient => { %>
+      <tr>
+        <td><%= patient.patientId %></td>
+        <td><%= patient.surname %></td>
+        <td><%= patient.otherNames %></td>
+        <td><%= patient.gender %></td>
+        <td><%= patient.phoneNumber %></td>
+        <td><%= patient.residentialAddress %></td>
+        <td><%= patient.emergencyName %></td>
+        <td><%= patient.emergencyContact %></td>
+        <td><%= patient.relationship %></td>
+      </tr>
+    % }) %>
+  </table>
+
+  <h2>Register New Patient</h2>
+  <form action="/register" method="post">
+
+    
+    <label for="patientId">Patient ID:</label>
+    <input type="text" name="patientId" required>
+    <br>
+    <label for="surname">Surname:</label>
+    <input type="text" name="surname" required>
+    <br>
+    
+    
+    <br>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
